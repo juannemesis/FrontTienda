@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Formulario Tiendas</title>
+</head>
+<body>
+    <section class="main">
+        <span><h1>Formulario Productos</h1></span>
+        <div>
+            <form action="" onsubmit="" method="POST">
+                <div>
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" name="nombre-n" id="nombre-n" placeholder="Digite el nombre de la tienda">
+                </div>
+                <div>
+                    <label for="descripcion">Dirección:</label><br>
+                    <input type="text" name="direccion-d" id="direccion-d" placeholder="Digite la dirección de la tienda física">
+                </div>
+                <div>
+                    <label for="imagen">Horario:</label><br>
+                    <input type="text" name="horario-h" id="horario-h" placeholder="Digite el horario de atención">
+                </div>
+                <div>
+                    <label for="valor">Telefono:</label><br>
+                    <input type="text" name="telefono-t" id="telefono-t" placeholder="Digite el número telefónico">
+                </div>
+                <div>
+                    <label for="link">Parqueadero:</label><br>
+                    <input type="text" name="parqueadero-p" id="parqueadero-p" placeholder="Registre si tiene o no parqueadero para clientes">
+                </div>
+                <button type="button" class="btn-blue" onclick="guardarTiendas()">Guardar</button>
+                <button type="button" class="btn-blue" id="btn-editar">Editar</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/request.js"></script>
+    <script src="js/tiendas.js"></script>
+
+    <script>
+        window.onload = function(){
+            let boton = document.getElementById('btn-editar');
+            const url = new URLSearchParams(window.location.search);
+            cargarDatos(url.get('id'));
+            boton.onclick=() =>{
+                modificarTiendas(url.get('id'));
+            }
+        }
+    </script>
+</body>
+</html>

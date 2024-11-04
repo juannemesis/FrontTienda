@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Módulo Proveedores</title>
+</head>
+<body>
+    <section>
+        <div>
+            <span>Módulo Proveedorers</span>
+            <button class="btn-blue" onclick="window.location = 'formProveedores.html'">Adicionar proveedores</button>
+        </div>
+        <br>
+        <table class="table-t">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tipo identificación</th>
+                    <th scope="col">Número identificación</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Departamento</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="proveedores-table">
+                
+            </tbody>
+        </table>
+    </section>
+    <script src="js/request.js"></script>
+    <script src="js/proveedores.js"></script>
+    <script>
+        window.onload = function(){
+            mostrarProveedores();
+        }
+    </script>
+</body>
+</html>

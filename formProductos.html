@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Formulario Productos</title>
+</head>
+<body>
+    <section class="main">
+        <span><h1>Formulario Productos</h1></span>
+        <div>
+            <form action="" onsubmit="" method="POST">
+                <div>
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" name="nombre-n" id="nombre-n" placeholder="Digite el nombre del producto">
+                </div>
+                <div>
+                    <label for="descripcion">Descripción:</label><br>
+                    <input type="text" name="descripcion-d" id="descripcion-d" placeholder="Digite la descripción del producto">
+                </div>
+                <div>
+                    <label for="imagen">Imagen:</label><br>
+                    <input type="text" name="imagen-i" id="imagen-i" placeholder="Copie la url de la imagen en la web">
+                </div>
+                <div>
+                    <label for="valor">Valor:</label><br>
+                    <input type="number" name="valor-v" id="valor-v" placeholder="Digite el valor comercial del producto , en pesos colombianos">
+                </div>
+                <div>
+                    <label for="link">Link:</label><br>
+                    <input type="text" name="link-l" id="link-l" placeholder="Digite la url de refencia donde visualizó el producto">
+                </div>
+                <button type="button" class="btn-blue" onclick="guardarProductos()">Guardar</button>
+                <button type="button" class="btn-blue" id="btn-editar">Editar</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/request.js"></script>
+    <script src="js/productos.js"></script>
+
+    <script>
+        window.onload = function(){
+            let boton = document.getElementById('btn-editar');
+            const url = new URLSearchParams(window.location.search);
+            cargarDatos(url.get('id'));
+            boton.onclick=() =>{
+                modificarProductos(url.get('id'));
+            }
+        }
+    </script>
+</body>
+</html>

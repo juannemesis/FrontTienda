@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Formulario Proveedores</title>
+</head>
+<body>
+    <section class="main">
+        <span><h1>Formulario Proveedores</h1></span>
+        <div>
+            <form action="" onsubmit="" method="POST">
+                <div>
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" name="nombre-n" id="nombre-n" placeholder="Digite el nombre del proveedor">
+                </div>
+                <div>
+                    <label for="descripcion">Tipo identificación:</label><br>
+                    <input type="text" name="tipoident-t" id="tipoident-t" placeholder="Digite el tipo de identificación">
+                </div>
+                <div>
+                    <label for="imagen">Número de identficación:</label><br>
+                    <input type="text" name="numeroident-ni" id="numeroident-ni" placeholder="Digite el número de identificación">
+                </div>
+                <div>
+                    <label for="valor">Telefono:</label><br>
+                    <input type="text" name="telefono-t" id="telefono-t" placeholder="Digite el número telefónico">
+                </div>
+                <div>
+                    <label for="link">Dirección:</label><br>
+                    <input type="text" name="direccion-d" id="direccion-d" placeholder="Digite la dirección del proveedor">
+                </div>
+                <div>
+                    <label for="link">Departamento:</label><br>
+                    <input type="text" name="departamento-de" id="departamento-de" placeholder="Seleccione el departamento del proveedor">
+                </div>
+                <button type="button" class="btn-blue" onclick="guardarProveedores()">Guardar</button>
+                <button type="button" class="btn-blue" id="btn-editar">Editar</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/request.js"></script>
+    <script src="js/proveedores.js"></script>
+
+    <script>
+        window.onload = function(){
+            let boton = document.getElementById('btn-editar');
+            const url = new URLSearchParams(window.location.search);
+            cargarDatos(url.get('id'));
+            boton.onclick=() =>{
+                modificarProveedores(url.get('id'));
+            }
+        }
+    </script>
+</body>
+</html>

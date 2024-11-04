@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Módulo Tiendas</title>
+</head>
+<body>
+    <section>
+        <div>
+            <span>Módulo Tiendas</span>
+            <button class="btn-blue" onclick="window.location = 'formTiendas.html'">Adicionar tiendas</button>
+        </div>
+        <br>
+        <table class="table-t">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Horario</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Parqueadero</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tiendas-table">
+                
+            </tbody>
+        </table>
+    </section>
+    <script src="js/request.js"></script>
+    <script src="js/tiendas.js"></script>
+    <script>
+        window.onload = function(){
+            mostrarTiendas();
+        }
+    </script>
+</body>
+</html>
